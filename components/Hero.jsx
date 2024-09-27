@@ -2,8 +2,8 @@ import React from 'react'
 import Search from './Search'
 import Result from './Result'
 
-export default function Hero({getMovie, searchInput,movieList,moviePoster}) {
-    console.log(movieList)
+export default function Hero({getMovie, searchInput,movieObj,moviePoster}) {
+    console.log(movieObj)
 // const heroBackground = {
 //     'background':''
 // }
@@ -22,7 +22,7 @@ export default function Hero({getMovie, searchInput,movieList,moviePoster}) {
             className='hero'
         >
     <Search getMovie={getMovie} searchInput={searchInput} />
-    <Result movieList={movieList}/>
+    <Result movieObj={movieObj}/>
     </div>
   )
 }

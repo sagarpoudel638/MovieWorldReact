@@ -2,7 +2,7 @@ import React from 'react'
 import Switch from './Switch'
 import MovieList from './MovieList'
 
-export default function SavedMovies({movieList}) {
+export default function SavedMovies({movieObj}) {
   return (
     <div
     style={{
@@ -12,7 +12,7 @@ export default function SavedMovies({movieList}) {
     className='savedmovies'
 >
    <Switch/>
-   <MovieList movieList={movieList}/>
+   <MovieList movieObj={movieObj}/>
    </div>
   )
 }

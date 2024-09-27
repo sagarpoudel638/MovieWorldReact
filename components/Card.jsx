@@ -1,14 +1,16 @@
 import React from "react";
 import poster from '../src/assets/poster.jpg'
 
-export default function Card({movie}) {
+export default function Card({movie, cardType}) {
     // console.log(movie)
-    const handleWatchLater=()=>{
+    const handleSaveMovie=(userPreferences)=>{
       
 
     }
   return (
+
     <>
+    
       <div className="card mb-3" style={{ maxWidth: '540px' }}>
         <div className="row g-0">
           <div className="col-md-4">
@@ -23,10 +25,15 @@ export default function Card({movie}) {
               <p className="card-text">
                 {movie.plot}
               </p>
-              
-              <button className="btn btn-warning" onClick={handleWatchLater}> Watch Later</button>
-              <button className="btn btn-primary">Like</button>
-              <button className="btn btn-danger">Delete</button>
+
+
+              {cardType === "Search" ?(
+                <>
+              <button className="btn btn-warning" onClick={handleSaveMovie("Watch Later")} > Watch Later</button>
+              <button className="btn btn-primary" onClick={handleSaveMovie("Like")}>Like</button></>):(<><div>{movie.type}</div></>)}
+
+              {cardType ==! "Search" ?(
+              <button className="btn btn-danger">Delete</button>):("")}
 
             </div>
           </div>

@@ -12,7 +12,7 @@ library.add( faTrash, faArrowRight, faMagnifyingGlass, faClock, faHeart)
 
 function App() {
   
-  let [movieList, setmovieList] = useState([]);
+  let [movieObj, setMovieObj] = useState([]);
 
   const searchInput = useRef("");
 
@@ -30,7 +30,7 @@ function App() {
         type: "watchlater",
       }];
       
-      setmovieList(tempMovieList);
+      setMovieObj(tempMovieList);
 
       console.log(tempMovieList);
     } catch (error) {
@@ -41,8 +41,8 @@ function App() {
   return (
     <>
      <Title/>
-     <Hero getMovie={getMovie} searchInput={searchInput} movieList={movieList} moviePoster={movieList[0]?movieList[0].poster:""}/> 
-     <SavedMovies movieList={movieList}/>
+     <Hero getMovie={getMovie} searchInput={searchInput} movieObj={movieObj} moviePoster={movieObj[0]?movieObj[0].poster:""}/> 
+     <SavedMovies movieObj={movieObj}/>
     </>
   )
 }

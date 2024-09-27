@@ -1,11 +1,11 @@
 import React from "react";
 import Card from "./Card";
 
-export default function Result({movieList}) {
+export default function Result({movieObj}) {
   return (
     <>
-      {movieList.map((item, index) => {
-        return <Card key={index} movie={item} />;
+      {movieObj.map((item, index) => {
+        return <Card key={index} movie={item} cardType="Search"/>;
       })}
      
     </>
