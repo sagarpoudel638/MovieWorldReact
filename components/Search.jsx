@@ -13,6 +13,8 @@ export default function Search({ getMovie, searchInput }) {
 
   return (
     <>
+    <h1 className="text-light">Search Millions of Movies</h1>
+    <h3 className="text-light">Find out more about the movie before watching them....</h3>
       <form onSubmit={handleSearch}>
         {/* <input
           type="text"

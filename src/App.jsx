@@ -15,11 +15,12 @@ function App() {
   let [movieObj, setMovieObj] = useState([]);
 
   const searchInput = useRef("");
+  const apiKEY = import.meta.env.VITE_APIKEY;
 
   async function getMovie(query) {
     try {
       const response = await axios.get(
-        `https://www.omdbapi.com/?apikey=6607632a&t=${query}`
+        `https://www.omdbapi.com/?apikey=${apiKEY}&t=${query}`
       );
       console.log(response);
       let tempMovieList = [{
